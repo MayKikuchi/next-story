@@ -81,6 +81,9 @@ const NavigationBar = () => {
             case 'profile':
                 history.push('/profile');
                 break;
+            case 'about':
+                history.push('/about');
+                break;
             default:
                 break;
         }
@@ -122,6 +125,7 @@ const NavigationBar = () => {
             open={isMenuOpen}
             onClose={closeMenu}
         >
+            <MenuItem onClick={(ev) => handleMenuClose(ev, 'about')}>About</MenuItem>
             <MenuItem onClick={(ev) => handleMenuClose(ev, 'logout')}>Logout</MenuItem>
         </Menu>
     );
@@ -140,6 +144,7 @@ const NavigationBar = () => {
             <MenuItem onClick={(ev) => handleMenuClose(ev, 'tags')}>Tags</MenuItem>
             <MenuItem onClick={(ev) => handleMenuClose(ev, 'explore')}>Explore</MenuItem>
             <MenuItem onClick={(ev) => handleMenuClose(ev, 'profile')}>Profile</MenuItem>
+            <MenuItem onClick={(ev) => handleMenuClose(ev, 'about')}>About</MenuItem>
             <MenuItem onClick={(ev) => handleMenuClose(ev, 'logout')}>Logout</MenuItem>
         </Menu>
     );
